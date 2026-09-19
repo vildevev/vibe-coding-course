@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — Vilde</title>
+  <meta name="description" content="A little page about Vilde: fun facts and favorite quotes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,700;0,6..12,800;1,6..12,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --peach: #FFE8C7;
+      --paper: #FFFDF6;
+      --cocoa: #3F2E1E;
+      --cocoa-soft: #6E5945;
+      --tomato: #E8562D;
+      --leaf: #3E7C46;
+      --sun: #FFC53D;
+      --sun-soft: #FFE9A6;
+      --line: #E9CFA6;
+      --display: "Baloo 2", "Arial Rounded MT Bold", sans-serif;
+      --body: "Nunito Sans", "Trebuchet MS", -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--body);
+      color: var(--cocoa);
+      background:
+        radial-gradient(circle at 50% -12%, rgba(255, 199, 100, 0.45), transparent 55%),
+        var(--peach);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    ::selection { background: var(--sun-soft); }
+
+    :focus-visible {
+      outline: 2px solid var(--cocoa);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: clamp(3rem, 9vw, 4.5rem) clamp(1.25rem, 5vw, 2rem) 3rem;
+    }
+
+    /* ---- Hero ---- */
+
+    .hero { text-align: center; }
+
+    .name {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(4rem, 15vw, 6.75rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .wave {
+      display: inline-block;
+      font-size: 0.72em;
+      transform-origin: 72% 74%;
+      animation: wave 1.5s ease 1.05s 1;
+    }
+
+    @keyframes wave {
+      0%, 55%, 100% { transform: rotate(0); }
+      10% { transform: rotate(16deg); }
+      20% { transform: rotate(-9deg); }
+      30% { transform: rotate(14deg); }
+      42% { transform: rotate(-5deg); }
+    }
+
+    .underline {
+      display: block;
+      width: min(86%, 360px);
+      height: auto;
+      margin: 0.15rem auto 0;
+    }
+
+    .underline path {
+      fill: none;
+      stroke: var(--tomato);
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: draw 0.9s ease-out 0.25s forwards;
+    }
+
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    .tagline {
+      max-width: 40ch;
+      margin: 1.4rem auto 0;
+      font-size: 1.08rem;
+      color: var(--cocoa-soft);
+    }
+
+    /* ---- Sections ---- */
+
+    section { margin-top: clamp(2.75rem, 8vw, 3.75rem); }
+
+    h2 {
+      margin: 0 0 0.4rem;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    /* ---- Fun facts ---- */
+
+    .fact-list {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+    }
+
+    .fact-list li {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1.15rem 0.15rem;
+      border-bottom: 2px dotted var(--line);
+    }
+
+    .fact-list li:last-child { border-bottom: none; }
+
+    .fact-emoji {
+      flex: none;
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 50%;
+      background: var(--sun-soft);
+      display: grid;
+      place-items: center;
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+
+    .fact-text strong {
+      display: block;
+      font-weight: 800;
+      font-size: 1.14rem;
+    }
+
+    .fact-note {
+      display: block;
+      margin-top: 0.1rem;
+      font-size: 0.97rem;
+      color: var(--cocoa-soft);
+    }
+
+    /* ---- Quotes ---- */
+
+    .quote {
+      position: relative;
+      margin: 1.6rem 0 0;
+      padding: 1.5rem 1.7rem 1.25rem;
+      background: var(--paper);
+      border: 2px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .quote:nth-of-type(1) { rotate: -0.7deg; }
+    .quote:nth-of-type(2) { rotate: 0.55deg; }
+
+    .quote::before {
+      content: "\201C";
+      position: absolute;
+      top: -0.85rem;
+      left: 1.15rem;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 3.1rem;
+      line-height: 1;
+      color: var(--sun);
+    }
+
+    .quote p {
+      margin: 0;
+      font-style: italic;
+      font-size: 1.13rem;
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: 0.55rem;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: var(--leaf);
+    }
+
+    .quote cite::before { content: "— "; }
+
+    /* ---- Footer ---- */
+
+    .foot {
+      margin-top: clamp(3rem, 9vw, 4rem);
+      text-align: center;
+      font-size: 0.97rem;
+      color: var(--cocoa-soft);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wave, .underline path { animation: none; }
+      .underline path { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="hero">
+      <h1 class="name">Vilde <span class="wave" aria-hidden="true">👋</span></h1>
+      <svg class="underline" viewBox="0 0 296 14" aria-hidden="true" focusable="false">
+        <path d="M4 10 Q 22 2 40 8 T 76 8 T 112 8 T 148 8 T 184 8 T 220 8 T 256 8 T 292 8" pathLength="100"/>
+      </svg>
+      <p class="tagline">Hi, thanks for stopping by! Here's a little snapshot of me — some fun facts and the quotes I live by.</p>
+    </header>
+
+    <section aria-labelledby="facts-title">
+      <h2 id="facts-title">A few fun facts</h2>
+      <ul class="fact-list">
+        <li>
+          <span class="fact-emoji" aria-hidden="true">🏋️</span>
+          <span class="fact-text">
+            <strong>I love to lift weights.</strong>
+            <span class="fact-note">There's no problem a good session can't shrink.</span>
+          </span>
+        </li>
+        <li>
+          <span class="fact-emoji" aria-hidden="true">🌯</span>
+          <span class="fact-text">
+            <strong>I love chicken caesar wraps.</strong>
+            <span class="fact-note">The perfect meal — I could eat one every day.</span>
+          </span>
+        </li>
+        <li>
+          <span class="fact-emoji" aria-hidden="true">⚽</span>
+          <span class="fact-text">
+            <strong>I love to watch soccer.</strong>
+            <span class="fact-note">Match days are the best days.</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="quotes-title">
+      <h2 id="quotes-title">Quotes I love</h2>
+      <blockquote class="quote">
+        <p>The key to happiness is not by achieving your desires, but by eliminating them.</p>
+        <cite>Naval Ravikant</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>You have power over your mind — not outside events. Realize this, and you will find strength.</p>
+        <cite>Marcus Aurelius</cite>
+      </blockquote>
+    </section>
+
+    <footer class="foot">
+      <p>Thanks for reading — see you around! <span aria-hidden="true">⚽ 🌯 🏋️</span></p>
+    </footer>
+
+  </main>
+</body>
+</html>
